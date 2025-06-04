@@ -6,7 +6,7 @@ Thank you for taking the time to contribute! This project contains a .NET backen
 
 1. Fork the repository and create your feature branch from `main`.
 2. Install dependencies:
-   - Backend: use [.NET 8](https://dotnet.microsoft.com/) and run `dotnet restore`.
+   - Backend: use [.NET 8](https://dotnet.microsoft.com/) and run `dotnet restore server/Codex.sln`.
    - Frontend: navigate to `client` and run `npm ci`.
 3. Make your changes and commit regularly with clear messages.
 
@@ -16,7 +16,7 @@ Before opening a pull request, ensure that both backend and frontend tests pass:
 
 ```bash
 # Backend tests
-dotnet test
+dotnet test server/Codex.sln
 
 # Frontend tests
 cd client

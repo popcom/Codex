@@ -15,11 +15,11 @@ jobs:
         with:
           dotnet-version: '8.0.x'
       - name: Restore
-        run: dotnet restore
+        run: dotnet restore server/Codex.sln
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build server/Codex.sln --configuration Release --no-restore
       - name: Publish
-        run: dotnet publish -c Release -o publish
+        run: dotnet publish server/Codex.sln -c Release -o publish
       - name: Upload Backend Artifact
         uses: actions/upload-artifact@v3
         with:
@@ -70,7 +70,7 @@ jobs:
           cd client
           npm test -- --watch=false --browsers=ChromeHeadless
       - name: Run Backend Tests
-        run: dotnet test --no-build
+        run: dotnet test server/Codex.sln --no-build
 
   package:
     runs-on: ubuntu-latest
